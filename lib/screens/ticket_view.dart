@@ -110,7 +110,7 @@ class TicketView extends StatelessWidget {
             ),
 
             /////////////////////////////
-            // Blue part of the card ////
+            // Orange part of the card //
             /////////////////////////////
 
             Container(
@@ -127,7 +127,30 @@ class TicketView extends StatelessWidget {
                                 topRight: Radius.circular(10),
                                 bottomRight: Radius.circular(10)))),
                   ),
-                  const Spacer(),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: LayoutBuilder(
+                        builder:
+                            (BuildContext context, BoxConstraints constraints) {
+                          return Flex(
+                            direction: Axis.horizontal,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: List.generate(
+                                (constraints.constrainWidth() / 15).floor(),
+                                (index) => SizedBox(
+                                      width: 5,
+                                      height: 1,
+                                      child: DecoratedBox(
+                                          decoration: BoxDecoration(
+                                        color: Colors.white,
+                                      )),
+                                    )),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
                   SizedBox(
                     height: 20,
                     width: 10,
@@ -137,9 +160,63 @@ class TicketView extends StatelessWidget {
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10),
                                 bottomLeft: Radius.circular(10)))),
-                  )],
+                  )
+                ],
               ),
-            )
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Styles.orangeColor,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(21),
+                      bottomRight: Radius.circular(21))),
+              padding: EdgeInsets.only(left:16,top:10,right:16,bottom: 16),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "1 May",
+                            style:
+                                Styles.headlineStyleS.copyWith(color: Colors.white),
+                          ),
+                          const Gap(5),
+                          Text("Date",style: Styles.headlineStyleXS.copyWith(color: Colors.white),)
+                        ],
+                      ),
+                      const Spacer(),
+                      Column(
+                        children: [
+                          Text(
+                            "08:00 AM",
+                            style: Styles.headlineStyleS
+                                .copyWith(color: Colors.white),
+                          ),
+                          const Gap(5),
+                          Text("Departure time",style: Styles.headlineStyleXS.copyWith(color: Colors.white),)
+                        ],
+                      ),
+                      const Spacer(),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            "23",
+                            style:
+                                Styles.headlineStyleS.copyWith(color: Colors.white),
+                          ),
+                          const Gap(5),
+                          Text("Number",style: Styles.headlineStyleXS.copyWith(color: Colors.white),)
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
