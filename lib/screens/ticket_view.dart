@@ -13,10 +13,10 @@ class TicketView extends StatelessWidget {
     final size = AppLayout.getSize(context);
 
     return SizedBox(
-      width: size.width,
+      width: size.width*0.85,
       height: 200,
       child: Container(
-        margin: EdgeInsets.only(left: 16),
+        margin: EdgeInsets.only(right: 16),
         child: Column(
           children: [
             /////////////////////////////
