@@ -1,5 +1,6 @@
 import 'package:first_one/utils/app_layout.dart';
 import 'package:first_one/utils/app_styles.dart';
+import 'package:first_one/widgets/double_text_widget.dart';
 import 'package:first_one/widgets/icon_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:first_one/utils/app_styles.dart';
@@ -96,7 +97,13 @@ class SearchScreen extends StatelessWidget {
           style: Styles.textStyle.copyWith(color: Colors.white),
         ),
       ),
-    )
+    ),
+
+    /*************************Fourth part***********************/
+
+    Gap(AppLayout.getHeight(40)),
+    const AppDoubleTextWidget(bigText: "Upcoming flights",smallText: "view all",)
+
           ]),
     );
   }
