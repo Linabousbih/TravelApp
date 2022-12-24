@@ -2,6 +2,7 @@ import 'package:first_one/utils/app_layout.dart';
 import 'package:first_one/utils/app_styles.dart';
 import 'package:first_one/widgets/double_text_widget.dart';
 import 'package:first_one/widgets/icon_text_widget.dart';
+import 'package:first_one/widgets/ticket_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:first_one/utils/app_styles.dart';
 import 'package:gap/gap.dart';
@@ -28,50 +29,7 @@ class SearchScreen extends StatelessWidget {
 
             /*************************First part***********************/
 
-            FittedBox(
-              child: Container(
-                padding: EdgeInsets.all(3.5),
-                child: Row(
-                  children: [
-                    /*
-                *********************
-                ***Airline tickets***
-                *********************
-                */
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                          vertical: AppLayout.getHeight(7)),
-                      width: size.width * .44,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.horizontal(
-                              left: Radius.circular(AppLayout.getHeight(50))),
-                          color: Colors.white),
-                      child: Center(child: Text("Aireline tickets")),
-                    ),
-
-                    /*
-                *********************
-                ***Hotels***
-                *********************
-                */
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                          vertical: AppLayout.getHeight(7)),
-                      width: size.width * .44,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.horizontal(
-                              right: Radius.circular(AppLayout.getHeight(50))),
-                          color: Colors.transparent),
-                      child: Center(child: Text("Hotels")),
-                    )
-                  ],
-                ),
-                decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.circular(AppLayout.getHeight(50)),
-                    color: const Color(0xFFF4F6FD)),
-              ),
-            ),
+            const AppTicketsTabs(firstTab: "Airline tickets", secondTab: "Hotels"),
             Gap(AppLayout.getHeight(25)),
 
             /*************************Second part***********************/
