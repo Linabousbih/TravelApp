@@ -48,7 +48,7 @@ class TicketView extends StatelessWidget {
                                   .copyWith(color: Colors.white)
                               : Styles.headlineStyleS.copyWith(color: Colors.black)),
                       const Spacer(),
-                      Dot(isColor: true),
+                      Dot(isColor: isColor),
                       Expanded(
                         child: Stack(
                           children: [
@@ -92,7 +92,7 @@ class TicketView extends StatelessWidget {
                         ),
                       ),
                       Dot(
-                        isColor: true,
+                        isColor: isColor,
                       ),
                       const Spacer(),
                       Text(ticket['to']['code'],
@@ -157,7 +157,7 @@ class TicketView extends StatelessWidget {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
-                      child: AppLineWidget(sections: 15,isColor: false,)
+                      child: AppLineWidget(sections: 15,isColor: isColor,)
                     ),
                   ),
                   SizedBox(
@@ -188,9 +188,9 @@ class TicketView extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      AppTicketPart(text1: ticket['date'], text2: "Date", alignment: CrossAxisAlignment.start,isColor: false,),
-                      AppTicketPart(text1: ticket['departure_time'], text2: "Departure time", alignment: CrossAxisAlignment.center,isColor: false,),
-                      AppTicketPart(text1: ticket['number'].toString(), text2: "Number", alignment: CrossAxisAlignment.end,isColor: false,),                     
+                      AppTicketPart(text1: ticket['date'], text2: "Date", alignment: CrossAxisAlignment.start,isColor: isColor,),
+                      AppTicketPart(text1: ticket['departure_time'], text2: "Departure time", alignment: CrossAxisAlignment.center,isColor: isColor,),
+                      AppTicketPart(text1: ticket['number'].toString(), text2: "Num", alignment: CrossAxisAlignment.end,isColor: isColor,),                     
                     ],
                   )
                 ],
