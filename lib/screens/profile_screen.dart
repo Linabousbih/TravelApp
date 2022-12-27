@@ -17,6 +17,10 @@ class ProfileScreen extends StatelessWidget {
                 vertical: AppLayout.getHeight(20)),
             children: [
               Gap(AppLayout.getHeight(40)),
+
+              /************************************************
+               ****************First section*****************
+               ************************************************/
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -81,17 +85,77 @@ class ProfileScreen extends StatelessWidget {
                   Column(
                     children: [
                       InkWell(
-                        onTap: (){print("Tapped");},
+                          onTap: () {
+                            print("Tapped");
+                          },
                           child: Text(
-                        "Edit",
-                        style: Styles.textStyle.copyWith(
-                            color: Styles.primaryColor,
-                            fontWeight: FontWeight.w300),
-                      ))
+                            "Edit",
+                            style: Styles.textStyle.copyWith(
+                                color: Styles.primaryColor,
+                                fontWeight: FontWeight.w300),
+                          ))
                     ],
                   )
                 ],
               ),
+
+              /************************************************
+               ****************Second section*****************
+               ************************************************/
+
+              Gap(AppLayout.getHeight(8)),
+              Divider(
+                color: Colors.grey.shade500,
+              ),
+              Gap(AppLayout.getHeight(8)),
+              Stack(
+                children: [
+                  Container(
+                    height: AppLayout.getHeight(90),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: Styles.primaryColor,
+                        borderRadius:
+                            BorderRadius.circular(AppLayout.getHeight(18))),
+                  ),
+                  Container(
+                    child: Positioned(
+                      right: -45,
+                      top: -40,
+                      child: Container(
+                          padding: EdgeInsets.all(AppLayout.getHeight(30)),
+                          decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            shape: BoxShape.circle,
+                            border:
+                                Border.all(width: 18, color: Color(0xFF264CD2)),
+                          )),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(20), vertical: AppLayout.getHeight(20)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                      CircleAvatar(
+                        child: Icon(FluentSystemIcons.ic_fluent_lightbulb_filament_filled,color: Styles.primaryColor,size: 27,),
+                        maxRadius: 25,
+                        backgroundColor: Colors.white,
+                      ),
+                      Gap(AppLayout.getHeight(12)),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                        Text("You have a new reward", style: Styles.headlineStyleM.copyWith(fontWeight: FontWeight.bold, color: Colors.white),),
+                        Text("You have 95 flights in a year", style: Styles.headlineStyleM.copyWith(fontWeight: FontWeight.w500, color: Colors.white.withOpacity(0.9),fontSize: 16),),
+
+                      ],)
+                    ],),
+                  )
+                ],
+              )
             ]));
   }
 }
