@@ -1,4 +1,5 @@
 import 'package:first_one/screens/home_screen.dart';
+import 'package:first_one/screens/profile_screen.dart';
 import 'package:first_one/screens/search_screen.dart';
 import 'package:first_one/screens/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -20,7 +21,7 @@ int _selectedIndex=0;
     const HomeScreen(),
     const SearchScreen(),
     const TicketScreen(),
-    const Text("Profile")
+    const ProfileScreen()
   ];
 
 void _itemTapped(int index){
